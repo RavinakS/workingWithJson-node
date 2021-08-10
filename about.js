@@ -3,8 +3,10 @@ fs.readFile('data.json', 'utf-8', (err, jsonData)=>{
     if(err){
         console.log(err);
     }else{
-        console.log(jsonData);
-        const objectData = JSON.parse(jsonData);
+        // console.log(typeof jsonData); // string
+        const objectData = JSON.parse(jsonData); // JSON.parse converts the json string into object
+        // console.log(typeof objectData); // object
+        // console.log(jsonData.bharti.address); // undefined error because a string doesn't have (property)key:value
         console.log(objectData.bharti.address);
     }
 })
