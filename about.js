@@ -19,18 +19,21 @@ information["zeba"] = {
 const jsonString = JSON.stringify(information, null, 2);
 // to write data to a JSON file, we must create a JSON string of the data with JSON.stringify()
 
+fs.writeFileSync("data.json", jsonString);
+console.log("file is written successfully!");
+
 
 // As the names suggest, the fs.writeFileSync() method writes data to a file synchronously 
 // while fs.writeFile() writes data to a file in an asynchronous manner.
 
-fs.writeFile("data.json", jsonString, "utf-8", (err, data)=>{
-    if(err){
-        console.log("Couldn't write", err);
-    }else{
-        console.log("Successfully wrote file.");
-    }
-})
-console.log(jsonString);
+// fs.writeFile("data.json", jsonString, "utf-8", (err, data)=>{
+//     if(err){
+//         console.log("Couldn't write", err);
+//     }else{
+//         console.log("Successfully wrote file.");
+//     }
+// })
+// console.log(jsonString);
 
 
 
