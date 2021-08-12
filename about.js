@@ -1,4 +1,7 @@
 const fs = require('fs');
+//This module('fs' - file system) provides methods to read, write, and 
+//watch files along with many other functions to interact with the filesystem.
+// Since it is a native module, I don't need to install anything. just require.
 
 const information = {};
 information["bharti"] = {
@@ -16,6 +19,10 @@ information["zeba"] = {
 const jsonString = JSON.stringify(information, null, 2);
 // to write data to a JSON file, we must create a JSON string of the data with JSON.stringify()
 
+
+// As the names suggest, the fs.writeFileSync() method writes data to a file synchronously 
+// while fs.writeFile() writes data to a file in an asynchronous manner.
+
 fs.writeFile("data.json", jsonString, "utf-8", (err, data)=>{
     if(err){
         console.log("Couldn't write", err);
@@ -28,6 +35,9 @@ console.log(jsonString);
 
 
 // fs.readFileSync()- takes two parameter 1. path(file path wants to read) 2. option(optional)
+// The fs.readFileSync() method reads data from a file in a synchronous manner. Unlike fs.readFile()
+// Instead of passing the callback method, we only pass the name of the file.
+
 
 // const data = fs.readFileSync('data.json');
 // const objecData = JSON.parse(data);
